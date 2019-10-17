@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<html>
+    
+    <head>
+        <title>Maquette</title>
+        <link rel="stylesheet", href="style.css">
+        <script src="main.js"></script>
+    </head>
+    
+    <body>
+        
+        <h1>Sénario d'elasticité des prix</h1>
+        
+        <div id = facing> 
+            <div id = seting>    
+            
+                <label>Sénario: </label>
+                
+                <select onChange="load(this)">
+                    <option value = "1">test 1.0</option>
+                    <option value = "2">test 2.1</option>
+                    <option selected>Nouveau Sénario...</option>
+                </select>
+                
+                <button onclick="run()">Appliquer les modifications</button>
+                
+                <button>Sauvergarder le sénario</button>
+            
+            </div>
+        </div>
+        
+        <div id = input>
+        
+        <select id = "inputSelect" onchange="addData(this)">
+                <option value = "base">ajouter un input...</option>
+        </select>
+        
+        <div class = "inputs" id = "shift">
+
+            <div class = "input" id ="Price Shift alpha">
+                <label>Price shift alpha:</label>
+                <select id = "Price Shift alpha S" onchange="changed(this)">
+                    <option value = "20">20%</option>
+                    <option value = "10">10%</option>
+                    <option value = "0" selected>0%</option>
+                    <option value = "-10">-10%</option>
+                    <option value = "-20">-20%</option>
+                    <option value = "-30">-30%</option>
+                    <option value = "-40">-40%</option>
+                    <option value = "-50">-50%</option>
+                </select>
+                <button onclick="removeData(this)">X</button>
+            </div>
+
+            <div class = "input" id ="Price Shift beta">
+                <label>Price shift beta:</label>
+                <select id = "Price Shift beta S" onchange="changed(this)">
+                    <option value = "0" selected>0%</option>
+                    <option value = "-10">-10%</option>
+                    <option value = "-20">-20%</option>
+                    <option value = "-30">-30%</option>
+                    <option value = "-40">-40%</option>
+                    <option value = "-50">-50%</option>
+                </select>
+                <button onclick="removeData(this)">X</button>
+            </div>
+
+            <div class = "input" id ="Price Shift gamma">
+                <label>Price shift gamma:</label>
+                <select id = "Price Shift gamma S" onchange="changed(this)">
+                    <option value = "0" selected>0%</option>
+                    <option value = "-10">-10%</option>
+                    <option value = "-20">-20%</option>
+                    <option value = "-30">-30%</option>
+                    <option value = "-40">-40%</option>
+                    <option value = "-50">-50%</option>
+                </select>
+                <button onclick="removeData(this)">X</button>
+            </div>
+
+            <div class = "input" id ="Price Shift epsilon">
+                <label>Price shift epsilon:</label>
+                <select id = "Price Shift epsilon S" onchange="changed(this)">
+                    <option value = "0" selected>0%</option>
+                    <option value = "-10">-10%</option>
+                    <option value = "-20">-20%</option>
+                    <option value = "-30">-30%</option>
+                    <option value = "-40">-40%</option>
+                    <option value = "-50">-50%</option>
+                </select>
+                <button onclick="removeData(this)">X</button>
+            </div>
+
+            <div class = "input" id ="Price Shift mobile">
+                <label>Price shift  mobile:</label>
+                <select id = "Price Shift mobile S" onchange="changed(this)">
+                    <option value = "0" selected>0%</option>
+                    <option value = "-10">-10%</option>
+                    <option value = "-20">-20%</option>
+                    <option value = "-30">-30%</option>
+                    <option value = "-40">-40%</option>
+                    <option value = "-50">-50%</option>
+                </select>
+                <button onclick="removeData(this)">X</button>
+            </div>
+
+            <div class = "input" id ="Price Shift lota">
+                <label>Price shift lota:</label>
+                <select id = "Price Shift lota S" onchange="changed(this)">
+                    <option value = "0" selected>0%</option>
+                    <option value = "-10">-10%</option>
+                    <option value = "-20">-20%</option>
+                    <option value = "-30">-30%</option>
+                    <option value = "-40">-40%</option>
+                    <option value = "-50">-50%</option>
+                </select>
+                <button onclick="removeData(this)">X</button>
+            </div>
+
+            <div class = "input" id ="Price Shift theta">
+                <label>Price shift theta:</label>
+                <select id = "Price Shift theta S" onchange="changed(this)">
+                    <option value = "0" selected>0%</option>
+                    <option value = "-10">-10%</option>
+                    <option value = "-20">-20%</option>
+                    <option value = "-30">-30%</option>
+                    <option value = "-40">-40%</option>
+                    <option value = "-50">-50%</option>
+                </select>
+                <button onclick="removeData(this)">X</button>
+            </div>
+
+            <div class = "input" id ="Price Shift kappa">
+                <label>Price shift kappa:</label>
+                <select id = "Price Shift kappa S" onchange="changed(this)">
+                    <option value = "0" selected>0%</option>
+                    <option value = "-10">-10%</option>
+                    <option value = "-20">-20%</option>
+                    <option value = "-30">-30%</option>
+                    <option value = "-40">-40%</option>
+                    <option value = "-50">-50%</option>
+                </select>
+                <button onclick="removeData(this)">X</button>
+            </div>
+            
+        </div>
+        
+        <div class = "inputs" id = highData>
+        
+            <div class = "input" id ="high data tarif">
+                <label>high data tarif (alpha):</label>
+                <select id ="high data tarif S" onchange="changed(this)">
+                    <option value = "0">not avaible</option>
+                    <option value = "100" selected>100GB</option>
+                    <option value = "200">200GB</option>
+                </select>
+                <button onclick="removeData(this)">X</button>
+            </div>
+            
+        </div>
+        
+        <div class = "inputs" id = tarrif>
+        
+            <div class = "input" id = "unlimited tarrif alpha">
+                <label>unlimited tarrif alpha:</label>
+                <select id ="unlimited tarrif alpha S" onchange="changed(this)">
+                    <option selected>not avaible</option>
+                    <option value = "5">avaible at £+5</option>
+                    <option value = "10">avaible at £+10</option>
+                    <option value = "15">avaible at £+15</option>
+                </select>
+                <button onclick="removeData(this)">X</button>
+            </div>
+
+            <div class = "input" id = "unlimited tarrif beta">
+                <label>unlimited tarrif beta:</label>
+                <select onchange="changed(this)">
+                    <option selected>not avaible</option>
+                    <option>avaible at £+5</option>
+                    <option>avaible at £+10</option>
+                    <option>avaible at £+15</option>
+                </select>
+                <button onclick="removeData(this)">X</button>
+            </div>
+
+            <div class = "input" id = "unlimited tarrif gamma">
+                <label>unlimited tarrif gamma:</label>
+                <select onchange="changed(this)">
+                    <option>not avaible</option>
+                    <option selected>avaible at £+5</option>
+                    <option>avaible at £+10</option>
+                    <option>avaible at £+15</option>
+                </select>
+                <button onclick="removeData(this)">X</button>
+            </div>
+
+            <div class = "input" id = "unlimited tarrif epsilon">
+                <label>unlimited tarrif epsilon:</label>
+                <select onchange="changed(this)">
+                    <option selected>not avaible</option>
+                    <option>avaible at £+5</option>
+                    <option>avaible at £+10</option>
+                    <option>avaible at £+15</option>
+                </select>
+                <button onclick="removeData(this)">X</button>
+            </div>
+
+            <div class = "input" id = "unlimited tarrif mobile">
+                <label>unlimited tarrif  mobile:</label>
+                <select onchange="changed(this)">
+                    <option selected>not avaible</option>
+                    <option>avaible at £+5</option>
+                    <option>avaible at £+10</option>
+                    <option>avaible at £+15</option>
+                </select>
+                <button onclick="removeData(this)">X</button>
+            </div>
+
+            <div class = "input" id = "unlimited tarrif lota">
+                <label>unlimited tarrif lota:</label>
+                <select onchange="changed(this)">
+                    <option selected>not avaible</option>
+                    <option>avaible at £+5</option>
+                    <option>avaible at £+10</option>
+                    <option>avaible at £+15</option>
+                </select>
+                <button onclick="removeData(this)">X</button>
+            </div>
+
+            <div class = "input" id = "unlimited tarrif theta">
+                <label>unlimited tarrif theta:</label>
+                <select onchange="changed(this)">
+                    <option selected>not avaible</option>
+                    <option>avaible at £+5</option>
+                    <option>avaible at £+10</option>
+                    <option>avaible at £+15</option>
+                </select>
+                <button onclick="removeData(this)">X</button>
+            </div>
+
+            <div class = "input" id = "unlimited tarrif kappa">
+                <label>unlimited tarrif kappa:</label>
+                <select onchange="changed(this)">
+                    <option selected>not avaible</option>
+                    <option>avaible at £+5</option>
+                    <option>avaible at £+10</option>
+                    <option>avaible at £+15</option>
+                </select>
+                <button onclick="removeData(this)">X</button>
+            </div>
+            
+        </div>
+                    
+        </div>
+        
+        <div id = output>
+        
+            <img id = "senario" src="senario.png" alt="senario">
+        
+        </div>
+        
+                
+    </body>
+</html>

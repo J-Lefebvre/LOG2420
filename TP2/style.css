@@ -1,0 +1,55 @@
+* {
+  box-sizing: border-box;
+}
+
+#input{
+    width: 28%;
+    float:left;
+    padding: 5px;
+    margin: 5px;
+    background-color: #A0A0A0;
+}
+
+.input{
+    
+    padding: 2px;
+    border: 2px;
+    margin: 5px;
+    background-color: #C0C0C0;
+}
+
+.inputs {
+    text-align: right;
+    padding: 5px;
+    border: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color:#404040;
+}
+
+#seting {
+    float:center;
+    text-align:left;
+    width: 28%;
+    padding: 5px;
+    border: 25px;
+    margin: 5px;
+    background-color:#A0A0A0;
+}
+
+#seting *{
+    margin: 2px;
+}
+
+h1 {
+    margin: 5px;
+    margin-bottom: 10px;
+    background-color: #C0C0C0;
+    text-align: center;
+    font-size: 40px;
+}
+
+#output {
+    text-align:center;
+    
+}
